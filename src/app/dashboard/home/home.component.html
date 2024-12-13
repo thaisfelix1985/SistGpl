@@ -55,8 +55,18 @@
       <div class="row">
         <div class="col-md-6">
           <label for="inputCNPJ">CNPJ</label>
-          <input type="text" class="form-control" formControlName="CNPJ" id="inputCNPJ" placeholder="00.000.000/0001-00"
-            required>
+          <input
+              type="text"
+              class="form-control"
+              formControlName="CNPJ"
+              id="inputCNPJ"
+              placeholder="00.000.000/0001-00"
+              maxlength="18"
+              mask="00.000.000/0000-00"
+              required
+              (blur)="buscarCnpj()"
+            >
+
         </div>
         <div class="col-md-6">
           <label for="inputRazaoSocial">Razão Social</label>

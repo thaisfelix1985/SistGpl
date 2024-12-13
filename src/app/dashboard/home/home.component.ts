@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { DatePipe } from '@angular/common';  // Importando DatePipe
+export interface Empresa {
+  cnpj: string;
+  razaoSocial: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -18,7 +22,7 @@ export class HomeComponent {
   visibilidadeCampos: boolean[] = [true]; // Array que controla a visibilidade dos campos
   maxGruposCampos: number = 2; // Número máximo de grupos de campos visíveis
   camposAdicionados: number = 0; // Controle do número de campos já adicionados
-
+  empresa!: any;
   constructor(private fb: FormBuilder, private http: HttpClient, private datePipe: DatePipe) {
     this.formulario = this.fb.group({
       NumeroProcessoRio: ['', Validators.required],
@@ -138,6 +142,28 @@ export class HomeComponent {
     } else {
       // Mostrar erros de validação
       this.exibirErros();
+    }
+  }
+
+  buscarCnpj() {
+    const cnpj = this.formulario.get('CNPJ')?.value;
+    console.log(cnpj)
+    if (cnpj) {
+      const apiUrl = `http://10.1.72.147/api-gpl/Api/Empresa/BuscarEmpresa`;
+        const params = { cnpj }; // Adiciona o CNPJ como parâmetro de consulta
+        const body = { cnpj }; // Corpo da requisição
+
+        this.http.post(apiUrl, body, { params }).subscribe(
+          (response : any) => {
+            this.formulario.patchValue({
+              RazaoSocial: response.razaoSocial,
+            });
+            console.log(response)
+          },
+          (error) => {
+            console.error('Erro ao buscar o CNPJ:', error);
+          }
+        );
     }
   }
 
