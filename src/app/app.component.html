@@ -1,0 +1,17 @@
+<div class="d-flex flex-column vh-100">
+  <!-- Sidebar -->
+  <div class="d-flex flex-grow-1">
+    <!-- <app-sidebar></app-sidebar> -->
+
+    <!-- Conteúdo principal -->
+    <div class="flex-grow-1">
+      <app-navbar></app-navbar> <!-- Navbar -->
+      <div class="container mt-4">
+        <router-outlet></router-outlet> <!-- Conteúdo dinâmico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

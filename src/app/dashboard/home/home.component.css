@@ -1,0 +1,105 @@
+/* Container principal */
+.container {
+  max-width: 90%; /* Alarga o formulário */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 50px); /* Mantém a altura mínima */
+}
+
+/* Títulos das seções */
+.form-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+  text-decoration: underline;
+}
+
+/* Campos de entrada */
+.form-control {
+  width: 100%; /* Garante que os campos preencham o espaço disponível */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Botão de alternar campos */
+.btn-toggle {
+  margin-top: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+/* Campos adicionais (ocultos) */
+.hidden {
+  visibility: hidden; /* Oculta sem remover do layout */
+}
+
+/* Botões principais */
+button {
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-bottom: 40px; /* Adiciona espaço inferior para visibilidade */
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+/* Garantir que o corpo permita rolar até o fim */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Garante que a rolagem seja possível */
+}
+.form-section button {
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 16px;
+  }
+
+  .form-control {
+    font-size: 12px;
+    padding: 8px; /* Reduz o padding para telas pequenas */
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
