@@ -23,6 +23,7 @@ export class HomeComponent {
   maxGruposCampos: number = 2; // Número máximo de grupos de campos visíveis
   camposAdicionados: number = 0; // Controle do número de campos já adicionados
   empresa!: any;
+
   constructor(private fb: FormBuilder, private http: HttpClient, private datePipe: DatePipe) {
     this.formulario = this.fb.group({
       NumeroProcessoRio: ['', Validators.required],
@@ -158,9 +159,11 @@ export class HomeComponent {
             this.formulario.patchValue({
               RazaoSocial: response.razaoSocial,
             });
+            this.formulario.get('RazaoSocial')?.disable(); // Desabilita o campo
             console.log(response)
           },
           (error) => {
+            window.alert('CNPJ não cadastrado');
             console.error('Erro ao buscar o CNPJ:', error);
           }
         );
