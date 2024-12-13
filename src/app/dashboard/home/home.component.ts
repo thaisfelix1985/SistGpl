@@ -68,6 +68,14 @@ export class HomeComponent {
     }
   }
 
+  removerCampos() {
+  if (this.camposAdicionados > 0) {
+    this.camposAdicionados--; // Diminui o contador de campos adicionados
+    this.visibilidadeCampos.pop(); // Remove o último campo visível
+  }
+}
+
+
   // Função para formatar o CNPJ
   formatarCNPJ(cnpj: string): string {
     return cnpj.replace(/\D/g, '')  // Remove todos os caracteres não numéricos

@@ -1,26 +1,28 @@
 <div class="container mt-4">
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-  <!-- UNIDADE GESTORA -->
-<div class="form-section">
-  <div class="section-title">UNIDADE GESTORA</div>
-  <div class="row">
-    <div class="col-md-4">
-      <label for="inputUG">Código UG</label>
-      <input type="number" class="form-control" formControlName="UG" id="inputUG" placeholder="Código UG" required>
-      <div *ngIf="formulario.get('UG')?.invalid && formulario.get('UG')?.touched" class="text-danger">
-        Código UG é obrigatório.
+    <!-- UNIDADE GESTORA -->
+    <div class="form-section">
+      <div class="section-title">UNIDADE GESTORA</div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="inputUG">Código UG</label>
+          <input type="number" class="form-control" formControlName="UG" id="inputUG" placeholder="Código UG" required>
+          <div *ngIf="formulario.get('UG')?.invalid && formulario.get('UG')?.touched" class="text-danger">
+            Código UG é obrigatório.
+          </div>
+        </div>
+        <div class="col-md-8">
+          <label for="inputNomeUG">Nome da U.G</label>
+          <input type="text" class="form-control" formControlName="NomeUnidade" id="inputNomeUG"
+            placeholder="Nome da Unidade" required>
+          <div *ngIf="formulario.get('NomeUnidade')?.invalid && formulario.get('NomeUnidade')?.touched"
+            class="text-danger">
+            Nome da U.G é obrigatório.
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-8">
-      <label for="inputNomeUG">Nome da U.G</label>
-      <input type="text" class="form-control" formControlName="NomeUnidade" id="inputNomeUG" placeholder="Nome da Unidade" required>
-      <div *ngIf="formulario.get('NomeUnidade')?.invalid && formulario.get('NomeUnidade')?.touched" class="text-danger">
-        Nome da U.G é obrigatório.
-      </div>
-    </div>
-  </div>
-</div>
 
     <!-- NÚMERO DO PROCESSO -->
     <div class="form-section">
@@ -28,15 +30,18 @@
       <div class="row">
         <div class="col-md-6">
           <label for="inputNumProcesso">Número do processo de pagamento</label>
-          <input type="text" class="form-control" formControlName="NumeroProcessoRio" id="inputNumProcesso" placeholder="SMSPROXXXX-XXXXXX" required>
-          <div *ngIf="formulario.get('NumeroProcessoRio')?.invalid && formulario.get('NumeroProcessoRio')?.touched" class="text-danger">
+          <input type="text" class="form-control" formControlName="NumeroProcessoRio" id="inputNumProcesso"
+            placeholder="SMSPROXXXX-XXXXXX" required>
+          <div *ngIf="formulario.get('NumeroProcessoRio')?.invalid && formulario.get('NumeroProcessoRio')?.touched"
+            class="text-danger">
             Número do processo é obrigatório.
           </div>
         </div>
         <div class="col-md-6">
           <label for="inputDataAbertura">Data de abertura do Processo Rio</label>
           <input type="date" class="form-control" formControlName="DataEmissao" id="inputDataAbertura" required>
-          <div *ngIf="formulario.get('DataEmissao')?.invalid && formulario.get('DataEmissao')?.touched" class="text-danger">
+          <div *ngIf="formulario.get('DataEmissao')?.invalid && formulario.get('DataEmissao')?.touched"
+            class="text-danger">
             Data de abertura é obrigatória.
           </div>
         </div>
@@ -50,11 +55,13 @@
       <div class="row">
         <div class="col-md-6">
           <label for="inputCNPJ">CNPJ</label>
-          <input type="text" class="form-control" formControlName="CNPJ" id="inputCNPJ" placeholder="00.000.000/0001-00" required>
+          <input type="text" class="form-control" formControlName="CNPJ" id="inputCNPJ" placeholder="00.000.000/0001-00"
+            required>
         </div>
         <div class="col-md-6">
           <label for="inputRazaoSocial">Razão Social</label>
-          <input type="text" class="form-control" formControlName="RazaoSocial" id="inputRazaoSocial" placeholder="Razão Social da Empresa" required>
+          <input type="text" class="form-control" formControlName="RazaoSocial" id="inputRazaoSocial"
+            placeholder="Razão Social da Empresa" required>
         </div>
       </div>
     </div>
@@ -65,11 +72,13 @@
       <div class="row">
         <div class="col-md-4">
           <label for="inputNrNotaFiscal">Número da NF</label>
-          <input type="text" class="form-control" formControlName="NrNotaFiscal" id="inputNrNotaFiscal" placeholder="Número da Nota Fiscal" required>
+          <input type="text" class="form-control" formControlName="NrNotaFiscal" id="inputNrNotaFiscal"
+            placeholder="Número da Nota Fiscal" required>
         </div>
         <div class="col-md-4">
           <label for="inputValorBruto">Valor Bruto</label>
-          <input type="number" class="form-control" formControlName="ValorBruto" id="inputValorBruto" placeholder="R$ 0,00" required>
+          <input type="number" class="form-control" formControlName="ValorBruto" id="inputValorBruto"
+            placeholder="R$ 0,00" required>
         </div>
         <div class="col-md-4">
           <label for="inputDataEmissao">Data de Emissão</label>
@@ -84,15 +93,18 @@
       <div class="row">
         <div class="col-md-2">
           <label for="inputCOFINS">COFINS</label>
-          <input type="number" class="form-control" formControlName="COFINS" id="inputCOFINS" placeholder="R$ 00.000" required>
+          <input type="number" class="form-control" formControlName="COFINS" id="inputCOFINS" placeholder="R$ 00.000"
+            required>
         </div>
         <div class="col-md-2">
           <label for="inputCSLL">CSLL</label>
-          <input type="number" class="form-control" formControlName="CSLL" id="inputCSLL" placeholder="R$ 00.000" required>
+          <input type="number" class="form-control" formControlName="CSLL" id="inputCSLL" placeholder="R$ 00.000"
+            required>
         </div>
         <div class="col-md-2">
           <label for="inputISS">ISS</label>
-          <input type="number" class="form-control" formControlName="ISS" id="inputISS" placeholder="R$ 00.000" required>
+          <input type="number" class="form-control" formControlName="ISS" id="inputISS" placeholder="R$ 00.000"
+            required>
         </div>
         <div class="col-md-2">
           <label for="inputIR">IR</label>
@@ -100,57 +112,65 @@
         </div>
         <div class="col-md-2">
           <label for="inputPIS">PIS</label>
-          <input type="number" class="form-control" formControlName="PIS" id="inputPIS" placeholder="R$ 00.000" required>
+          <input type="number" class="form-control" formControlName="PIS" id="inputPIS" placeholder="R$ 00.000"
+            required>
         </div>
         <div class="col-md-2">
           <label for="inputINSS">INSS</label>
-          <input type="number" class="form-control" formControlName="INSS" id="inputINSS" placeholder="R$ 00.000" required>
+          <input type="number" class="form-control" formControlName="INSS" id="inputINSS" placeholder="R$ 00.000"
+            required>
         </div>
       </div>
     </div>
 
-   <!-- NOTA DE EMPENHO -->
-   <div class="form-section">
-  <div class="section-title">NOTA DE EMPENHO</div>
-  <div formArrayName="listEmpenho">
-    <div *ngFor="let empenho of listEmpenho.controls; let i = index" [formGroupName]="i">
-      <div *ngIf="visibilidadeCampos[i]" class="row mb-3">
-        <!-- NE -->
-        <div class="col-md-2">
-          <label for="inputnNE{{i}}">NE {{i + 1}}</label>
-          <input type="text" class="form-control" formControlName="NE" id="inputnNE{{i}}" placeholder="2024NEXXXXXX" required>
-        </div>
-        <!-- FR -->
-        <div class="col-md-2">
-          <label for="inputFR{{i}}">FR</label>
-          <input type="number" class="form-control" formControlName="FR" id="inputFR{{i}}" placeholder="Detalhamento" required>
-        </div>
-        <!-- Natureza da Despesa -->
-        <div class="col-md-2">
-          <label for="inputND{{i}}">Natureza da despesa</label>
-          <input type="number" class="form-control" formControlName="NaturezaDespesa" id="inputND{{i}}" placeholder="XXXXXX" required>
-        </div>
-        <!-- Tipo Patrimonial -->
-        <div class="col-md-2">
-          <label for="inputTP{{i}}">Tipo patrimonial</label>
-          <input type="number" class="form-control" formControlName="TipoPatrimonial" id="inputTP{{i}}" placeholder="XX" required>
-        </div>
-        <!-- Item Patrimonial -->
-        <div class="col-md-2">
-          <label for="inputIP{{i}}">Item patrimonial</label>
-          <input type="number" class="form-control" formControlName="ItemPatrimonial" id="inputIP{{i}}" placeholder="XXX" required>
-        </div>
-        <!-- Botão de "+" na mesma linha -->
-        <div class="col-md-2 d-flex align-items-center">
-          <button type="button" class="btn btn-success" (click)="mostrarMaisCampos()">+</button>
+    <!-- NOTA DE EMPENHO -->
+    <div class="form-section">
+      <div class="section-title">NOTA DE EMPENHO</div>
+      <div formArrayName="listEmpenho">
+        <div *ngFor="let empenho of listEmpenho.controls; let i = index" [formGroupName]="i">
+          <div *ngIf="visibilidadeCampos[i]" class="row mb-3">
+            <div class="d-flex flex-wrap align-items-center w-100">
+              <!-- NE -->
+              <div class="col-md-2">
+                <label for="inputnNE{{i}}">NE {{i + 1}}</label>
+                <input type="text" class="form-control" formControlName="NE" id="inputnNE{{i}}" placeholder="2024NEXXXXXX" required>
+              </div>
+              <!-- FR -->
+              <div class="col-md-2">
+                <label for="inputFR{{i}}">FR</label>
+                <input type="number" class="form-control" formControlName="FR" id="inputFR{{i}}" placeholder="Detalhamento" required>
+              </div>
+              <!-- Natureza da Despesa -->
+              <div class="col-md-2">
+                <label for="inputND{{i}}">Natureza da despesa</label>
+                <input type="number" class="form-control" formControlName="NaturezaDespesa" id="inputND{{i}}" placeholder="XXXXXX"
+                  required>
+              </div>
+              <!-- Tipo Patrimonial -->
+              <div class="col-md-2">
+                <label for="inputTP{{i}}">Tipo patrimonial</label>
+                <input type="number" class="form-control" formControlName="TipoPatrimonial" id="inputTP{{i}}" placeholder="XX"
+                  required>
+              </div>
+              <!-- Item Patrimonial -->
+              <div class="col-md-2">
+                <label for="inputIP{{i}}">Item patrimonial</label>
+                <input type="number" class="form-control" formControlName="ItemPatrimonial" id="inputIP{{i}}" placeholder="XXX"
+                  required>
+              </div>
+              <!-- Botão "+" e "-" -->
+              <div class="d-flex col-md-2 align-items-center gap-2">
+                <button type="button" class="btn btn-success" (click)="mostrarMaisCampos()">+</button>
+                <button type="button" class="btn btn-danger" (click)="removerCampos()">-</button>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
-  </div>
-</div>    
 
     <!-- BOTÃO DE ENVIO -->
     <div class="text-right mt-3">
       <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
     </div>
-
